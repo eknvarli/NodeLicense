@@ -3,6 +3,8 @@
 import express from 'express';
 import sequelize from './models';
 import licenseRoutes from './routes/licenseRoutes';
+import authMiddleware from './middleware/authMiddleware';
+
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -12,6 +14,7 @@ sequelize.sync()
     .catch(err => console.error(err));
 
 app.use(express.json());
+app.use('/licenses', authMiddleware);
 app.use('/licenses', licenseRoutes);
 
 app.listen(PORT, () => {

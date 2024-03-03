@@ -27,7 +27,8 @@ Example;
 }
 ```
 
-Login endpoint: `/login`.
+#### NOTE! You need basic auth from middleware/authMiddleware.ts:5
+Set your username and password via code.
 
 ## Usage
 ```typescript

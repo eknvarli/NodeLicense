@@ -1,9 +1,9 @@
 // Test App for NodeLicense
 
-import { LicenseChecker } from '.';
+import { LicenseChecker } from './index';
 
-const licenseChecker = new LicenseChecker({ apiUrl: 'http://127.0.0.1' });
-licenseChecker.checkLicenseKey('your_license_key')
+const licenseChecker = new LicenseChecker({ apiUrl: 'http://127.0.0.1:3000', username: 'YOUR_ADMIN_USERNAME', password: 'YOUR_ADMIN_PASSWORD' });
+licenseChecker.checkLicenseKey('examplekey1')
     .then(isValidLicense => {
         if (isValidLicense) {
             console.log('License key is valid.');
